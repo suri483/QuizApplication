@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><meta content="text/html; charset=utf-8">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	<script>
+		function validate(){
+			
+			var user1 = document.getElementById("u1").value;
+			var user2 = document.getElementById("u2").value;
+			var pa1 = document.getElementById("p1").value;
+			var pa2 = document.getElementById("p2").value;
+			
+			if(user1.length==0){
+				if(user2.length==0){
+					if(pa1.length==0){
+						if(pa2.length==0){
+							alert("Please Fill out the Total Fields");
+							return false;
+						}
+					}
+				}
+			}
+			else{
+				if((user1==user2) && (pa1==pa2)){
+					alert("proceed");
+				
+				}else{
+					alert("Username or Password are in-correct");
+					return false;
+				}
+			}
+
+		}
+	</script>
+</head>
+<body>
+  <form  action="SignUpServlet" onSubmit="return validate()"  method="get">
+	<h3><center>SignUp Page</center></h3>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-2">FirstName :</div>
+			<div class="col-xs-4"><input type="text" id="n1"></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-2">LastName :</div>
+			<div class="col-xs-4"><input type="text" id="n2"></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-2">UserName :</div>
+			<div class="col-xs-4"> <input type="text" id="u1" name="us1"></div>
+		</div>		
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-2">Re Enter UserName :</div>
+			<div class="col-xs-4"> <input type="text" id="u2"></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-2">Password :</div>
+			<div class="col-xs-4"> <input type="password" id="p1" name="pw1"></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-2">Re Enter Password :</div>
+			<div class="col-xs-4"> <input type="password" id="p2"></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-2"></div>
+			<div class="col-xs-4"> <input type="submit" value="send"></div>
+		</div>
+	</div>
+  </form>  
+</body>
+</html>
